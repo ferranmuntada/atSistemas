@@ -1,0 +1,8 @@
+<label for="website">Razas:</label>
+<div class="select">
+    <select [ngModel]="val" (ngModelChange)="select($event)">
+        <option disabled>{{ 'selectBreed' | translate }}</option>
+        <option>{{ 'chooseOption' | translate }}</option>
+        <ng-content></ng-content>
+    </select>
+</div>

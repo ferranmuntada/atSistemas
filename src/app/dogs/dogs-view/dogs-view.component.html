@@ -1,0 +1,8 @@
+<ngx-loading [show]="loading$ | async" [config]="{ backdropBorderRadius: '3px' }">
+</ngx-loading>
+<div class="header">
+    <app-dropdown [formControl]="breedControl">
+        <option *ngFor="let breed of breeds$ | async">{{breed}}</option>
+    </app-dropdown>
+</div>
+<app-dogs-list [dogs]="dogs$ | async"></app-dogs-list>
