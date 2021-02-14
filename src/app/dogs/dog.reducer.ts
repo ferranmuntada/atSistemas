@@ -7,12 +7,14 @@ export interface DogState {
     breeds: string[];
     dogs: string[];
     loading: boolean;
+    error: string;
 }
 
 const initialState: DogState = {
     breeds: [],
     dogs: [],
-    loading: false
+    loading: false,
+    error: null
 };
 
 export const reducer = createReducer(

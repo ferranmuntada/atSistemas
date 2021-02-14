@@ -2,39 +2,51 @@ import * as fromDogReducer from './dog.reducer';
 import * as fromDogAction from './dog.action';
 
 describe('Reducer: Dog', () => {
+  let initialState: fromDogReducer.DogState;
+  const ERROR_MESSAGE = 'ERROR';
+
+  beforeEach(() => {
+    initialState = {
+      breeds: [],
+      dogs: [],
+      loading: false,
+      error: null
+    };
+  });
+
   it('should return Breeds List', () => {
-    const initialState = { breeds: [], dogs: [], loading: true };
-    const state = fromDogReducer.reducer(undefined, fromDogAction.getBreeds);
-    expect(state).toEqual(initialState);
+    const expected = { breeds: [], dogs: [], loading: true, error: null };
+    const state = fromDogReducer.reducer(initialState, fromDogAction.getBreeds);
+    expect(state).toEqual(expected);
   });
 
   it('should Success Breed', () => {
-    const initialState = { breeds: [], dogs: [], loading: false };
-    const state = fromDogReducer.reducer(undefined, fromDogAction.getBreedsSuccess({ data: [] }));
-    expect(state).toEqual(initialState);
+    const expected = { breeds: [], dogs: [], loading: false, error: null };
+    const state = fromDogReducer.reducer(initialState, fromDogAction.getBreedsSuccess({ data: [] }));
+    expect(state).toEqual(expected);
   });
 
   it('should return error on get Breeds', () => {
-    const initialState = { breeds: [], dogs: [], loading: false, error: undefined };
-    const state = fromDogReducer.reducer(undefined, fromDogAction.getBreedsFailure);
-    expect(state).toEqual(initialState);
+    const expected = { breeds: [], dogs: [], loading: false, error: ERROR_MESSAGE };
+    const state = fromDogReducer.reducer(initialState, fromDogAction.getBreedsFailure({error: ERROR_MESSAGE}));
+    expect(state).toEqual(expected);
   });
 
   it('should get Dogs', () => {
-    const initialState = { breeds: [], dogs: [], loading: true };
-    const state = fromDogReducer.reducer(undefined, fromDogAction.getDogsByBreed);
-    expect(state).toEqual(initialState);
+    const expected = { breeds: [], dogs: [], loading: true, error: null };
+    const state = fromDogReducer.reducer(initialState, fromDogAction.getDogsByBreed);
+    expect(state).toEqual(expected);
   });
 
   it('should get Dogs success', () => {
-    const initialState = { breeds: [], dogs: [], loading: false };
-    const state = fromDogReducer.reducer(undefined, fromDogAction.getDogsByBreedSuccess({ data: [] }));
-    expect(state).toEqual(initialState);
+    const expected = { breeds: [], dogs: [], loading: false, error: null };
+    const state = fromDogReducer.reducer(initialState, fromDogAction.getDogsByBreedSuccess({ data: [] }));
+    expect(state).toEqual(expected);
   });
 
   it('should return error on get Dogs', () => {
-    const initialState = { breeds: [], dogs: [], loading: false, error: undefined };
-    const state = fromDogReducer.reducer(undefined, fromDogAction.getDogsByBreedFailure);
-    expect(state).toEqual(initialState);
+    const expected = { breeds: [], dogs: [], loading: false, error: ERROR_MESSAGE };
+    const state = fromDogReducer.reducer(initialState, fromDogAction.getBreedsFailure({error: ERROR_MESSAGE}));
+    expect(state).toEqual(expected);
   });
 });
