@@ -18,6 +18,8 @@ Se ha realizado un proyecto donde tenemos que recibir los perros a partir de un 
 ### Modulo principal
 He montado un modulo de perros donde se gestionan todos los datos de los perros y las razas ( las razas podrian estar en otro modulo, pero como la raza es una caracteristica de un perro creo que deberia estar en el modulo de perros.)
 
+Tambien quiero destacar, que todos los ficheros de este modulo que son para gestionar los estados del mismo , podrian ir en una carpeta (State), para que así estubieran centralizados. Personalmente me gustan mas que esten así. ( creo que ya es un tema personal )
+
 ### Modulo de Dropdown
 Para realizar el dropdown de razas he decidido crear un modulo de dropdown implementando la interfaz de ControlValueAccessor para poder reutilizar este modulo en cualquier aspecto, Tanto si estamos gestionando un formulario, como si queremos gestionar ese dropdown con ngmodel.
 
