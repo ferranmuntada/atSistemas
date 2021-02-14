@@ -14,6 +14,8 @@ ng serve
 ### Introducción a realizar
 Se ha realizado un proyecto donde tenemos que recibir los perros a partir de un dropdown de razas, con respuestas de las acciones que realizamos a partir de alertas, preparar la aplicación para que sea internacionalizada y controlando todos los errores.
 
+Si esto fuera un proyecto real, no usaria NGRX ya que es un proyecto bastante pequeño y el coste de realizarlo en ngrx es bastante elevado. 
+
 ### Se ha realizado el proyecto en Angular 11 con NGRX
 ### Modulo principal
 He montado un modulo de perros donde se gestionan todos los datos de los perros y las razas ( las razas podrian estar en otro modulo, pero como la raza es una caracteristica de un perro creo que deberia estar en el modulo de perros.)
