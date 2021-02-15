@@ -1,4 +1,5 @@
 {
+    "breeds": "Breeds",
     "chooseOption": "Choose One option",
     "selectBreed": "Select breed",
     "breedLoadSuccess": "Breeds loads success",
